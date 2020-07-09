@@ -8,3 +8,6 @@ https://github.com/OSP123/TravelSecure.git
 
 ### resource for database...
 https://expressjs.com/en/guide/using-middleware.html
+
+### resource for inventory...
+- maybe use CAT for dropdown menu to access vehicle options for employee to access.
