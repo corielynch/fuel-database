@@ -3,9 +3,8 @@
 const express = require ("express");
 const path = require ("path");
 const session = require ("express-session");
-const passport = require ("./config/passport");
-const config = require("./config/extra-config");
-
+var passport   = require('passport');
+ 
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8000;
@@ -15,10 +14,10 @@ var db = require("./models");
 const app = express();
 
 //allow sessions
-app.use(session({ secret: 'Truckdriver', cookie: { maxAge: 60000 }}));
+// app.use(session({ secret: 'Truckdriver', cookie: { maxAge: 60000 }}));
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// // view engine setup
+// app.set('views', path.join(__dirname, 'views'));
 
 //set up handlebars
 const exphbs = require('express-handlebars');
@@ -36,6 +35,20 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+ 
+app.use(passport.initialize());
+ 
+app.use(passport.session()); // persistent login sessions
+
+require("./routes/auth-route.js")(app,passport);
+
+//load passport strategies
+require("./config/passport/passport.js")(passport, db.Auth);
+
+
 
 // app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
 // app.use(passport.initialize());
@@ -63,12 +76,9 @@ app.use(function(err, req, res, next) {
 });
 
 
-// our module get's exported as app.
-module.exports = app;
-
 // Syncing our database and logging a message to the user upon success
-// db.sequelize.sync().then(function() {
+db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
       console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
     });
-//   });
+  });

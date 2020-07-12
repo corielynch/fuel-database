@@ -1,16 +1,11 @@
-
-'use strict';
+ 
 
 module.exports = (sequelize, DataTypes) => {
   const Fuel = sequelize.define('Fuel', {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
+     
     submit_time: {
         type: 'TIMESTAMP',
-        defaultValue: DataTypes.literal('CURRENT_TIMESTAMP'),
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
         allowNull: false
     },
     fuel: {
