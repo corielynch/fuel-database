@@ -23,6 +23,5 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
-  });
-
-// need to add hooks
+  })
+};

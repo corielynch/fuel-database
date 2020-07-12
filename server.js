@@ -8,7 +8,7 @@ const config = require("./config/extra-config");
 
 
 // Setting up port and requiring models for syncing
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8000;
 var db = require("./models");
 
 // instantiate our app
