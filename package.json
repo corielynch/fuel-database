@@ -18,13 +18,16 @@
   },
   "homepage": "https://github.com/corielynch/fuel-database#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.0.0",
     "express-session": "^1.17.1",
     "fs": "0.0.1-security",
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "sequelize": "^6.3.0"
+    "sequelize": "^6.3.3"
   }
 }
