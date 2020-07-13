@@ -3,8 +3,9 @@ We are creating an application for a construction company’s internal use in or
 
 
 
-### resource for authentication...
+### resource for Travel Secure authentication...
 https://github.com/OSP123/TravelSecure.git
+https://www.youtube.com/watch?v=zYi9PguVFx8
 
 ### resource for database...
 https://expressjs.com/en/guide/using-middleware.html
