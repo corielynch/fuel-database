@@ -1,3 +1,5 @@
+const authRoute = require("../routes/auth-route");
+
 module.exports = function (sequelize, Sequelize) {
 
     var Auth = sequelize.define('Auth', {
@@ -40,6 +42,12 @@ module.exports = function (sequelize, Sequelize) {
         }
     });
 
-    return Auth;
+    Auth.associate = (models) => {
+        // Associating auth with Fuel
+        Auth.hasMany(models.Fuel, {
+            onDelete: "cascade"
+        });
+    };
 
+    return Auth;
 }

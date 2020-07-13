@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Fuel.associate = (models) => {
     // associations can be defined here
-    Fuel.belongsTo(models.User, {
+    Fuel.belongsTo(models.Auth, {
       foreignKey: {
         allowNull: false
       }
