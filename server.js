@@ -13,9 +13,6 @@ var db = require("./models");
 // instantiate our app
 const app = express();
 
-//allow sessions
-// app.use(session({ secret: 'Truckdriver', cookie: { maxAge: 60000 }}));
-
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 

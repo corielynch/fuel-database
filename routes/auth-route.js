@@ -5,7 +5,7 @@ module.exports = function (app, passport) {
     // 
 
    app.get("/",function(req,res){
-       res.render("signin_signup")
+       res.render("index")
    })
    
     app.get("/logout", function (req, res) {
