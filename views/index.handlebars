@@ -1,22 +1,32 @@
-<div class="login_form">
-        <setion class="login-wrapper">
-          
-          <div class="logo">
-               <a target="_blank" rel="noopener" href="https://lynchconstruction.net">
-               <img src="../assets/img/logo.png" alt="logo"></a>
-          </div>
-          
-          <form id="login" method="post" action="#">
-           
-            <label for="username">User Name</label>
-            <input  required name="login[username]" type="text" autocapitalize="off" autocorrect="off"/>
-            
-            <label for="password">Password</label>
-            <input class="password" required name="login[password]" type="password" />
-            <div class="hide-show">
-              <span>Show</span>
-            </div>
-            <button type="submit">Sign In</button>
-          </form>
-        </section>
-    </div>
+<div class="container">
+<form  id="signin" name="signin" method="post" action="signin/user">
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name=email>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+    
+</div>
+    <br/>
+<div class="container">
+   <form id="signup" name="signup" method="post" action="/signup">
+        <label for="email">Email Address</label>
+        <input class="text" name="email" type="email" />
+        <label for="firstname">Firstname</label>
+        <input name="firstname" type="text" />
+        <label for="lastname">Lastname</label>
+        <input name="lastname" type="text" />
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+        <input class="btn btn-warning" type="submit" value="Sign Up" />
+    </form>
+    
+</div>
