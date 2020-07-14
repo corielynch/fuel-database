@@ -1,6 +1,6 @@
-var passport = require("../config/passport/passport.js");
-var path = require("path");
-var db = require("../models");
+const passport = require("../config/passport/passport.js");
+const path = require("path");
+const db = require("../models");
 module.exports = function (app, passport) {
    app.get("/",function(req,res){
        res.render("signin_signup")

@@ -1,7 +1,6 @@
-const authRoute = require("../routes/auth-route");
+const authRoute = require("../routes/authRoute");
 
 module.exports = function (sequelize, Sequelize) {
-
     var Auth = sequelize.define('Auth', {
 
         id: {

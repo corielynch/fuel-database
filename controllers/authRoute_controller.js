@@ -1,7 +1,8 @@
-var db = require('../models');
+//corey worked on with T
+const db = require('../models');
 
 exports.indexPage = function(req,res) {
-  res.render('auth-route/index', {
+  res.render('authRoute/index', {
     layout: 'main-index'
   });
 };
@@ -28,7 +29,7 @@ exports.signUpUser = function(req,res) {
       });
     
     } else {
-      db.Auth-route.create({
+      db.authRoute.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password

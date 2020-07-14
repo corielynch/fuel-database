@@ -1,5 +1,4 @@
- 
-
+//Austin worked on
 module.exports = (sequelize, DataTypes) => {
   const Fuel = sequelize.define('Fuel', {
      

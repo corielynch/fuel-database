@@ -1,11 +1,9 @@
 ///Dependencies
-
 const express = require ("express");
 const path = require ("path");
 const session = require ("express-session");
 var passport   = require('passport');
  
-
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8000;
 var db = require("./models");
@@ -29,21 +27,18 @@ app.set('view engine', 'handlebars');
 // const isAuth 				 = require("./config/middleware/isAuthenticated");
 // const authCheck 		 = require('./config/middleware/attachAuthenticationStatus');
 
-
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 // app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
- 
 app.use(passport.initialize());
  
 app.use(passport.session()); // persistent login sessions
 
-require("./routes/auth-route.js")(app,passport);
+require("./routes/authRoute.js")(app,passport);
 
 //load passport strategies
 require("./config/passport/passport.js")(passport, db.Auth);
@@ -54,7 +49,6 @@ require("./config/passport/passport.js")(passport, db.Auth);
 // app.use(passport.initialize());
 // app.use(passport.session());
 // app.use(authCheck);
-
 
 // require('./routes')(app);
 
@@ -74,7 +68,6 @@ app.use(function(err, req, res, next) {
     error: (app.get('env') === 'development') ? err : {}
   })
 });
-
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
