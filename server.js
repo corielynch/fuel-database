@@ -22,6 +22,8 @@ app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
+app.use(express.static('public/assets/img')); 
+
 
 // const isAuth 				 = require("./config/middleware/isAuthenticated");
 // const authCheck 		 = require('./config/middleware/attachAuthenticationStatus');
