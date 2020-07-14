@@ -1,8 +1,7 @@
 var db = require('../models');
 
-
 exports.indexPage = function(req,res) {
-  res.render('users/index', {
+  res.render('auth-route/index', {
     layout: 'main-index'
   });
 };
@@ -29,7 +28,7 @@ exports.signUpUser = function(req,res) {
       });
     
     } else {
-      db.User.create({
+      db.Auth-route.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
