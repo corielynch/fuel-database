@@ -23,7 +23,7 @@ module.exports = function (app, passport) {
     });
 
         
-    app.post("/signin/user",passport.authenticate('local-signin'),function(req,res) {
+    app.post("/signin/user", passport.authenticate('local-signin'),function(req,res) {
         
          console.log(req.user);
          res.send("Success!");
