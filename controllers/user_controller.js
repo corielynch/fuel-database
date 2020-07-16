@@ -18,7 +18,7 @@ exports.signInUser = (req, res) => {
   // So we're sending the user back the route to the members page because the redirect will happen on the front end
   // They won't get this or even be able to access this page if they aren't authed
   console.log(req.user);
-  
+
   // can send to different route below if logged in; the submit/view data page
   res.json("/");
 };
@@ -27,7 +27,7 @@ exports.signInUser = (req, res) => {
 exports.signUpUser = (req, res) => {
 
   db.User.findAll({
-    where: { username: req.body.username }
+    where: { email: req.body.email }
   }).then(users => {
     if (users.length > 0) {
       res.json({
@@ -36,12 +36,14 @@ exports.signUpUser = (req, res) => {
 
     } else {
       db.User.create({
-        username: req.body.username,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         email: req.body.email,
         password: req.body.password
       }).then(() => {
         // can send to the submit or view page afterward with different route below
         res.send({ redirect: '/' });
+        res.send("hi");
       }).catch(err => {
         res.json(err);
       });
