@@ -8,10 +8,8 @@
 
     
 </div> --}}
+{{> nav }}
 
-<nav class="nav">
-  {{> nav}}
-</nav>
 
 <div class="container">
 <form  id="signin" name="signin" method="post" action="signin/user">
@@ -32,7 +30,7 @@
 </div>
     <br/>
 <div class="container">
-   <form id="signup" name="signup" method="post" action="/signup">
+   <form id="signup" name="signup" method="post" action="/">
         <label for="email">Email Address</label>
         <input class="text" name="email" type="email" />
         <label for="firstname">Firstname</label>

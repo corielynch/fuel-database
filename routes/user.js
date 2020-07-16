@@ -4,16 +4,17 @@ const db = require("../models");
 const express = require("express");
 const router = express.Router();
 const user_controller = require("../controllers/user_controller");
-
+module.exports = function(router) {
 router.get("/", user_controller.index);
 
 router.get("/signout", user_controller.signOutUser);
 
-router.post("/signin", passport.authenticate("local"), user_controller.signInUser);
+router.post("/signin", passport, user_controller.signInUser);
 
 router.post("/", user_controller.signUpUser);
+};
 
-module.exports = router;
+// module.exports = router;
 
 
 
