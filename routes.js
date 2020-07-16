@@ -1,12 +1,12 @@
-module.exports = function(app){
-
+module.exports = (app) => {
     const application = require('./routes/application');
-    const authRoute = require('./routes/auth-route');
-    const trips = require('./routes/trips');
+    const user = require('./routes/user');
+    const submit = require('./routes/submit-data');
+    const view = require('./routes/view-data')
 
-    app.use('/', application);
-    app.use('/auth-route', authRoute);
-    app.use('/trips', trips);
+    app.use('/', user);
+    // app.use('/user', user);
+    app.use('/submit', submit);
+    app.use('/view', view);
 
-//other routes..going to change trips to fuel or something else
 }

@@ -1,8 +1,8 @@
-const authRoute = require("../routes/auth-route");
+'use strict';
+const bcrypt = require("bcrypt");
 
-module.exports = function (sequelize, Sequelize) {
-
-    var Auth = sequelize.define('Auth', {
+module.exports = (sequelize, Sequelize) => {
+    const User = sequelize.define('User', {
 
         id: {
             autoIncrement: true,
@@ -40,14 +40,25 @@ module.exports = function (sequelize, Sequelize) {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
         }
-    });
+    }, {
 
-    Auth.associate = (models) => {
-        // Associating auth with Fuel
-        Auth.hasMany(models.Fuel, {
+        hooks: {
+            beforeCreate: (user, options) => {
+                user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+            }
+
+        }
+    });
+    User.prototype.validPassword = password => {
+        return bcrypt.compareSync(password, this.password);
+    }
+
+    User.associate = (models) => {
+        // Associating User with Fuel
+        User.hasMany(models.Fuel, {
             onDelete: "cascade"
         });
     };
 
-    return Auth;
+    return User;
 }

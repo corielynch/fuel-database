@@ -4,8 +4,8 @@ var passport = require("passport");
 
 // function to be called while there is a new sign/signup 
 // We are using passport local signin/signup strategies for our app
-module.exports = function (passport, auth) {
-    var Auth = auth;
+module.exports = function (passport, user) {
+    var User = user;
     
     var LocalStrategy = require('passport-local').Strategy;
 
@@ -22,7 +22,7 @@ module.exports = function (passport, auth) {
                 return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
 
             }
-            Auth.findOne({
+            User.findOne({
                 where: {
                     email: email
                 }
@@ -41,7 +41,7 @@ module.exports = function (passport, auth) {
                         lastname: req.body.lastname
                     };
 
-                    Auth.create(data).then(function (newUser, created) {
+                    User.create(data).then(function (newUser, created) {
                         if (!newUser) {
                             return done(null, false);
                         }
@@ -73,7 +73,7 @@ module.exports = function (passport, auth) {
 
         function (req, email, password, done) {
 
-            var Auth = auth;
+            var User = user;
 
             var isValidPassword = function (userpass, password) {
 
@@ -81,7 +81,7 @@ module.exports = function (passport, auth) {
 
             }
             console.log("logged to", email)
-            Auth.findOne({
+            User.findOne({
                 where: {
                     email: email
                 }
@@ -124,16 +124,16 @@ module.exports = function (passport, auth) {
     ));
 
     //serialize
-    passport.serializeUser(function (auth, done) {
+    passport.serializeUser(function (user, done) {
 
-        done(null, auth.id);
+        done(null, user.id);
 
     });
 
     // deserialize user 
     passport.deserializeUser(function (id, done) {
 
-        Auth.findById(id).then(function (user) {
+        User.findById(id).then(function (user) {
 
             if (user) {
 

@@ -1,35 +1,38 @@
- 
+'use strict';
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, Sequelize) => {
   const Fuel = sequelize.define('Fuel', {
-     
+
     submit_time: {
-        type: 'TIMESTAMP',
-        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-        allowNull: false
+      type: 'TIMESTAMP',
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+      allowNull: false
     },
+
     fuel: {
-      type: DataTypes.STRING,
+      type: Sequelize.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
+
     vehicle: {
-      type: DataTypes.STRING,
+      type: Sequelize.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
+
     gallons: {
-        type: DataTypes.DECIMAL(10,2),
-        allowNull: false
+      type: Sequelize.DECIMAL(10, 2),
+      allowNull: false
     },
   });
   Fuel.associate = (models) => {
     // associations can be defined here
-    Fuel.belongsTo(models.Auth, {
+    Fuel.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }

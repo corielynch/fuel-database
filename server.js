@@ -42,7 +42,7 @@ app.use(passport.initialize());
  
 app.use(passport.session()); // persistent login sessions
 
-require("./routes/auth-route.js")(app,passport);
+require("./routes/user.js")(app,passport);
 
 //load passport strategies
 require("./config/passport/passport.js")(passport, db.Auth);
