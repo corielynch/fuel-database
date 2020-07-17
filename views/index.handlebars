@@ -1,18 +1,13 @@
 {{!-- <nav class="nav">
   {{> nav}}
 </nav>
-
-<div class="container">
-<a href="user/sign-in-register">Log In</a>
-  
-
     
 </div> --}}
 {{> nav }}
 
 {{! change id from Input to User to make it more specific for its goal}}
 <div class="container">
-  <form id="signin" name="signin" method="post" action="signin/user">
+  <form id="signin" name="signin" method="post" action="signin">
     <div class="form-group">
       <label for="email">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
