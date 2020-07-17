@@ -32,7 +32,7 @@ app.use(express.static('public/assets/img'));
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 // app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -44,6 +44,7 @@ app.use(passport.session()); // persistent login sessions
 
 require("./routes/user.js")(app, passport);
 
+require("./routes/view-data")(app)
 //load passport strategies
 require("./config/passport/passport.js")(passport, db.User);
 

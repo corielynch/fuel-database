@@ -1,3 +1,5 @@
+{{> nav }}
+
 <h1>View Fuel Data</h1>
 
 <div class="container">
@@ -32,26 +34,11 @@
         </div>
     </div>
         <div class="row">
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label for="month">Choose Month</label><br>
-                    <input type="radio" name="createdAt" value="September2019"> September '19 <br>
-                    <input type="radio" name="createdAt" value="October2019"> October '19 <br>
-                    <input type="radio" name="createdAt" value="November2019"> November '19 <br>
-                    <input type="radio" name="createdAt" value="December2019"> December '19<br>
-                    <input type="radio" name="createdAt" value="January2020"> January '20<br>
-                    <input type="radio" name="createdAt" value="February2020"> February '20<br>
-                    <input type="radio" name="createdAt" value="March2020"> March '20<br>
-                    <input type="radio" name="createdAt" value="April2020"> April '20<br>
-                    <input type="radio" name="createdAt" value="May2020"> May '20<br>
-                    <input type="radio" name="createdAt" value="June2020"> June '20<br>
-                </div>
-            </div>
             <div class="col-md-10">
                 <table class="table table-dark" style="width: 90%;">
                     <thead>
                         <tr>
-                            <th scope="col">Employee Name</th>
+                            
                             <th scope="col">Fuel Type</th>
                             <th scope="col">Vehicle</th>
                             <th scope="col">Gallons</th>
@@ -59,13 +46,15 @@
                         </tr>
                     </thead>
                 <tbody>
+                      {{#each fueldata}}
                         <tr>
-                            <td>{{firstname}}{{lastname}}</td>
-                            <td>{{fuel}}</td>
-                            <td>{{vehicle}}</td>
-                            <td>{{gallons}}</td>
-                            <td>{{createdAt}}</td> 
+                            
+                            <td>{{dataValues.fuel}}</td>
+                            <td>{{dataValues.vehicle}}</td>
+                            <td>{{dataValues.gallons}}</td>
+                            <td>{{dataValues.createdAt}}</td> 
                         </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>

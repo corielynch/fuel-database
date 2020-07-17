@@ -20,7 +20,7 @@ exports.signInUser = (req, res) => {
   console.log(req.user);
 
   // can send to different route below if logged in; the submit/view data page
-  res.redirect("/");
+  res.render("two-buttons")
 };
 
 // register a user
@@ -44,7 +44,7 @@ exports.signUpUser = (req, res) => {
         // can send to the submit or view page afterward with different route below
         // res.send({ redirect: '/' });
         // res.redirect("/");
-        res.send("hi");
+        res.render("two-buttons")
       }).catch(err => {
         res.json(err);
       });
