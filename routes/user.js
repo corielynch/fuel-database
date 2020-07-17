@@ -4,7 +4,8 @@ const db = require("../models");
 const express = require("express");
 const router = express.Router();
 const user_controller = require("../controllers/user_controller");
-module.exports = function(router) {
+
+module.exports = (router) => {
 router.get("/", user_controller.index);
 
 router.get("/signout", user_controller.signOutUser);

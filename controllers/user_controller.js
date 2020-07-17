@@ -42,7 +42,8 @@ exports.signUpUser = (req, res) => {
         password: req.body.password
       }).then(() => {
         // can send to the submit or view page afterward with different route below
-        res.send({ redirect: '/' });
+        // res.send({ redirect: '/' });
+        // res.redirect("/");
         res.send("hi");
       }).catch(err => {
         res.json(err);
