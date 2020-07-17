@@ -2,9 +2,9 @@
   "name": "fuel-database",
   "version": "1.0.0",
   "description": "We are creating an application for a construction company’s internal use in order to organize and log into a database the company’s fuel inventory and consumption.",
-  "main": "\u001b: \"node ./bin/www\"",
+  "main": "\u001b: \"node server.js",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
