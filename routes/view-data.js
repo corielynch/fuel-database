@@ -2,8 +2,11 @@ const db = require("../models")
 
 module.exports = app => {
     app.get("/view-data", function(req,res){
-        db.Fuel.findAll().then(data => {
-            console.log(data)
+        db.Fuel.findAll({
+            // where: {
+            //     id: req.params.id
+            //   }
+        }).then(data => {
             res.render("view-data", {fueldata: data})
         })
     })
@@ -12,5 +15,4 @@ module.exports = app => {
             res.json(results)
         }) 
     })
-    
 }
