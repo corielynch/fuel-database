@@ -2,9 +2,15 @@
 module.exports = function(req, res, next) {
   // If the user is logged in, continue with the request to the restricted route
   if (req.user) {
+    console.log(req.user);
     return next();
+  } else {
+    res.send("You must be signed in");
+
+
   }
-  req.flash('unAuthenticated', 'Sorry, you must be logged in to see that');
+  // req.flash('unAuthenticated', 'Sorry, you must be logged in to see that');
   // If the user isnt' logged in, redirect them to the login page
-  return res.redirect("/");
+  // return res.redirect("/");
+
 };
