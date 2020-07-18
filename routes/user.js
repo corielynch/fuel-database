@@ -20,7 +20,7 @@ const user_controller = require("../controllers/user_controller");
 
 
 
-module.exports =   (app, passport) => {
+module.exports = (app, passport) => {
     // 
 
    app.get("/",function(req,res){
