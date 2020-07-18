@@ -11,12 +11,6 @@ $(document).ready(function() {
 
 });
 
-
-
-
-
-
-
 // $(function(){
 //     $('.hide-show').show();
 //     $('.hide-show span').addClass('show')

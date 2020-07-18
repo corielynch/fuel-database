@@ -1,23 +1,8 @@
 const passport = require("../config/passport/passport.js");
-// const passport = require("passport");
 const path = require("path");
 const db = require("../models");
 const express = require("express");
- 
 const user_controller = require("../controllers/user_controller");
-
-// module.exports = (router,passport) => {
-// router.get("/", user_controller.index);
-
-// router.get("/signout", user_controller.signOutUser);
-
-// router.post("/signin", passport, user_controller.signInUser);
-
-// router.post("/", user_controller.signUpUser);
-// };
-
-// module.exports = router;
-
 
 
 module.exports = (app, passport) => {
