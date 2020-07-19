@@ -54,6 +54,7 @@ module.exports = (app, passport) => {
     }
 
     app.get("/view-data", function (req, res) {
+        // res.render("view-data");
 
         db.Fuel.findAll().then(data => {
             console.log(data)

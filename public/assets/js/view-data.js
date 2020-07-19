@@ -30,8 +30,9 @@
 $(document).ready(function () {
     $("#viewBtn").on("click", event => {
         event.preventDefault();
-        window.location.assign("view-data");
-
+        const url = "/view-data";
+        window.location.replace(url);
+        // alert("hi");
         })
     });
 // });
