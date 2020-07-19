@@ -31,7 +31,6 @@ module.exports =   (app, passport) => {
 
 
     app.post("/signin", passport.authenticate('local-signin'),function(req,res) {
-
          console.log(req.user);
         res.render("two-buttons")
     });
@@ -39,7 +38,7 @@ module.exports =   (app, passport) => {
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated())
             return next();
-        res.redirect('/signin');
+        res.redirect('two-buttons');
 
     }
 }

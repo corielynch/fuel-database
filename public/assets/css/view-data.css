@@ -3,7 +3,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-
+  
   body, html, .login_form {
     height: 3.125rem;
     padding: 3rem 1.5rem;
@@ -14,7 +14,7 @@
     background: tan;
     text-align: center;
   }
-
+  
   .footer {
     position: fixed;
     left: 0;
