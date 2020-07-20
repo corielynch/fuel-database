@@ -1,33 +1,35 @@
+$(document).ready(function () {
 
-const { Sequelize, Model, DataTypes } = require("sequelize");
-const sequelize = new Sequelize("sqlite::memory:");
+    // Submit event creating a new Fuel account
+     $("#submit").on("submit", event => {
+         // preventDefault on a submit event
+         event.preventDefault();
 
-//need to log new current fuel coming in from the employee/user
-const Fuel = sequelize.define("fuel", {
-  fueltype: DataTypes.TEXT,
-  vehicle: DataTypes.INTEGER,
-  gallons: DataTypes.INTEGER
-});
+         const newFuel = {
+             fueltype: $("#fueltype").val().trim(),
+             Vehicle: $("#Vehicle").val().trim(),
+             gallons: $("#gallons").val().trim()
+         };
 
-(async () => {
-    await sequelize.sync({ force: true });
-    // Code here
+         if (!newFuel.fueltype || !newFuel.Vehicle || !newFuel.gallons) {
+             return alert("Please fill out all fields");
+         }
 
+         // Send the POST request
+         $.ajax("/submit-data", {
+             type: "POST",
+             data: newFuel
+         }).then(
+            (data) => {
+                 if (data.duplicateFuel) {
+                     alert("Account associated with e-mail already exists")
+                 } else {
+                     console.log("created new Fuel");
+                     // take to submit page
+                   
+                }
+           /submit-data.reload();
+            }
+        );
+   });
 
-const newFuel = Fuel.build({ newFuel: "gallons" });
-console.log(gallons instanceof Fuel); // true
-console.log(newFuel.Fuel); // "employees new fuel log in gallons"
-
-await newFuel.save();
-console.log('newFuel was saved to the database!');
-
-const newFuel = await Fuel.create({ newFuel: "gallons"});
-console.log(newFuel.toJSON()); // This is good!
-console.log(JSON.stringify(newFuel, null, 4));
-
-await newFuel.reload();
-console.log(newFuel.Fuel);
-})
-(
-
-);
