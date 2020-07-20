@@ -2,11 +2,8 @@ const db = require("../models")
 
 module.exports = app => {
     app.get("/view-data", function(req,res){
-        db.Fuel.findAll({
-            // where: {
-            //     id: req.params.id
-            //   }
-        }).then(data => {
+        db.Fuel.findAll().then(data => {
+            console.log(data)
             res.render("view-data", {fueldata: data})
         })
     })
@@ -16,3 +13,5 @@ module.exports = app => {
         }) 
     })
 }
+location.reload();
+

@@ -1,5 +1,5 @@
 ///Dependencies
-//const dotenv = require("dotenv").config();
+const dotenv = require("dotenv").config();
 const express = require ("express");
 const path = require ("path");
 const session = require ("express-session");
@@ -55,7 +55,7 @@ require("./config/passport/passport.js")(passport, db.User);
 // app.use(passport.session());
 // app.use(authCheck);
 
-require("./routes/submit-data")(app);
+
 // require('./routes')(app);
 
 // catch 404 and forward to error handler
@@ -79,6 +79,6 @@ app.use(function(err, req, res, next) {
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
-      console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);
+      console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
     });
   });

@@ -62,3 +62,6 @@ module.exports = (sequelize, Sequelize) => {
 
     return User;
 }
+
+// shouldn't this be exports fuel...or is it the same as return User;
+module.exports = User;
