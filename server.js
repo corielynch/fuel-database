@@ -1,5 +1,5 @@
 ///Dependencies
-const dotenv = require("dotenv").config();
+// const dotenv = require("dotenv").config();
 const express = require ("express");
 const path = require ("path");
 const session = require ("express-session");
@@ -42,13 +42,14 @@ app.use(passport.initialize());
  
 app.use(passport.session()); // persistent login sessions
 
-require("./routes/user.js")(app, passport);
 
-require("./routes/view-data")(app)
 //load passport strategies
 require("./config/passport/passport.js")(passport, db.User);
 
 
+require("./routes/user.js")(app, passport);
+
+// require("./routes/view-data")(app)
 
 // app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
 // app.use(passport.initialize());
@@ -59,11 +60,11 @@ require("./config/passport/passport.js")(passport, db.User);
 // require('./routes')(app);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+// app.use(function(req, res, next) {
+//   const err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
 // error handler
 // no stacktraces leaked to user unless in development environment
@@ -79,6 +80,6 @@ app.use(function(err, req, res, next) {
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
-      console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+      console.log(`==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.`, PORT);
     });
   });

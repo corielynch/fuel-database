@@ -1,4 +1,4 @@
-$(document).ready(function () {
+ $(document).ready(function () {
 
     // Submit event creating a new Fuel account
      $("#submit").on("submit", event => {
