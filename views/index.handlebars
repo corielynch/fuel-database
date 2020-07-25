@@ -1,9 +1,7 @@
-
 {{> nav }}
 
-{{! change id from Input to User to make it more specific for its goal}}
 <div class="container">
-  <form id="signin" name="signin" method="post" action="signin/user">
+  <form id="signin" name="signin" method="post" action="signin">
     <div class="form-group">
       <label for="email">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -13,11 +11,11 @@
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" class="form-control" id="password" placeholder="Enter your Password" name="password">
-    <label id="passwordText">show password</label><input type="checkbox" id="togglePassword"><br>
+      <label id="passwordText">show password</label><input type="checkbox" id="togglePassword"><br>
     </div>
     <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
   </form>
-</form>
+  </form>
 </div>
 <br><br>
 

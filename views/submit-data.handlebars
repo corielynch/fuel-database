@@ -6,26 +6,29 @@
 
     <div class="form-group">
         <label for="type">Fuel Type</label><br>
-        <input type="radio" name="fueltype" value="unleaded" checked> Unleaded <br>
-        <input type="radio" name="fueltype" value="diesel"> Diesel
+        <input type="radio" name="fueltype" value="Unleaded" required> Unleaded <br>
+        <input type="radio" name="fueltype" value="Diesel"> Diesel
     </div><br>
 
     <div class="form-group">
         <label for="vehicle">Vehicle</label><br>
-        <input type="radio" name="vehicletype" value="dumptruck"> Dump Truck <br>
+        <input type="radio" name="vehicletype" value="Dump Truck" required> Dump Truck <br>
         <input type="radio" name="vehicletype" value="Backhoe"> Backhoe <br>
-        <input type="radio" name="vehicletype" value="companyvehicle"> Company Vehicle <br>
-        <input type="radio" name="vehicletype" value="personalvehicle"> Personal Vehicle <br>
-        <input type="radio" name="vehicletype" value="small"> Small Equipment
+        <input type="radio" name="vehicletype" value="Company Vehicle"> Company Vehicle <br>
+        <input type="radio" name="vehicletype" value="Personal Vehicle"> Personal Vehicle <br>
+        <input type="radio" name="vehicletype" value="Small Equipment"> Small Equipment
     </div><br>
 
     <div class="form-group">
         <label for="ga">Gallons Used:</label>
-        <input type="number" id="ga" name="gallons">
+        <input type="number" id="ga" name="gallons" required>
     </div><br>
 
-    <button type="submit">Submit</button>
-</form>
+    <button id="send" type="button">Submit</button>
+</form><br>
 
+<form action="view-data" method="get" id="viewBtn" class="viewBtn">
+    <button type="button" class="btn btn-primary">VIEW FUEL DATA</button>
+</form><br>
 
 {{> footer }}

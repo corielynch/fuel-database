@@ -8,3 +8,8 @@ input::-webkit-inner-spin-button {
     padding: 3rem 1.5rem;
     text-align: center;
 }
+
+body {
+    background: tan;
+    text-align: center;
+}
