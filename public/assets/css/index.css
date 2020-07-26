@@ -1,4 +1,40 @@
-.starter-template {
-    padding: 3rem 1.5rem;
-    text-align: center;
+
+
+body, html, .login_form {
+  height: 2.125rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background-color: tan;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+}
+
+.navbar-brand{
+  margin:0 auto;
+   position: center;
+   padding-bottom: 65px;
+  }
+
+ 
+  /* @media (min-width: 992px)
+  .container{
+      max-width: 721px;
+  }
+
+  @media (min-width: 768px)
+.container{
+    max-width: 608px;
+}
+
+  @media (min-width: 576px)
+  .container{
+    max-width: 438px;
+} */
+

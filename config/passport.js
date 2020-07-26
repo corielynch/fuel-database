@@ -1,16 +1,16 @@
-const bcrypt = require('bcrypt');
-// const passport = require("passport");
-// const User = require("../../models/User")
-const LocalStrategy = require('passport-local').Strategy;
-// const db = require("../../models");
+var bCrypt = require('bcrypt-nodejs');
+var passport = require("passport");
+
 
 // function to be called while there is a new sign/signup 
 // We are using passport local signin/signup strategies for our app
-module.exports = function (passport, user) {
-    var User = user;
+module.exports = function (passport, auth) {
+    var Auth = auth;
+    
+    var LocalStrategy = require('passport-local').Strategy;
 
     passport.use('local-signup', new LocalStrategy(
-
+        
         {
             usernameField: 'email',
             passwordField: 'password',
@@ -19,10 +19,10 @@ module.exports = function (passport, user) {
         }, function (req, email, password, done) {
             console.log("Signup for - ", email)
             var generateHash = function (password) {
-                return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+                return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
 
             }
-            User.findOne({
+            Auth.findOne({
                 where: {
                     email: email
                 }
@@ -41,7 +41,7 @@ module.exports = function (passport, user) {
                         lastname: req.body.lastname
                     };
 
-                    User.create(data).then(function (newUser, created) {
+                    Auth.create(data).then(function (newUser, created) {
                         if (!newUser) {
                             return done(null, false);
                         }
@@ -50,14 +50,14 @@ module.exports = function (passport, user) {
                         }
 
                     });
-                }
+                    }
             });
         }
     ));
 
     //LOCAL SIGNIN
     passport.use('local-signin', new LocalStrategy(
-
+           
         {
 
             // by default, local strategy uses username and password, we will override with email
@@ -72,15 +72,16 @@ module.exports = function (passport, user) {
 
 
         function (req, email, password, done) {
-            var User = user;
+
+            var Auth = auth;
 
             var isValidPassword = function (userpass, password) {
 
-                return bcrypt.compareSync(password, userpass);
+                return bCrypt.compareSync(password, userpass);
 
             }
             console.log("logged to", email)
-            User.findOne({
+            Auth.findOne({
                 where: {
                     email: email
                 }
@@ -123,16 +124,16 @@ module.exports = function (passport, user) {
     ));
 
     //serialize
-    passport.serializeUser(function (user, done) {
+    passport.serializeUser(function (auth, done) {
 
-        done(null, user.id);
+        done(null, auth.id);
 
     });
 
     // deserialize user 
     passport.deserializeUser(function (id, done) {
 
-        User.findById(id).then(function (user) {
+        Auth.findById(id).then(function (user) {
 
             if (user) {
 

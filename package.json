@@ -4,8 +4,8 @@
   "description": "We are creating an application for a construction company’s internal use in order to organize and log into a database the company’s fuel inventory and consumption.",
   "main": "\u001b: \"node server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,11 @@
   "homepage": "https://github.com/corielynch/fuel-database#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
-    "dotenv": "^8.2.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
-    "express-handlebars": "^5.0.0",
+    "express-handlebars": "^5.1.0",
     "express-session": "^1.17.1",
     "fs": "0.0.1-security",
     "mysql2": "^2.1.0",

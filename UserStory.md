@@ -1,5 +1,3 @@
-// Just an idea...So if we get lost...here is our end goal
-
 Goal: Fuel inventory for better booklogs both for employees & employers. For tax purposes and business organization.
 
 `

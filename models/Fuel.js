@@ -1,11 +1,16 @@
-'use strict';
+"use strict";
 
-module.exports = (sequelize, Sequelize) => {
-  const Fuel = sequelize.define('Fuel', {
+module.exports = function (sequelize, Sequelize) {
+  const Fuel = sequelize.define("Fuel", {
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: Sequelize.INTEGER
+    },
 
     submit_time: {
-      type: 'TIMESTAMP',
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+      type: "TIMESTAMP",
+      defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
       allowNull: false
     },
 
@@ -30,13 +35,14 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false
     },
   });
-  Fuel.associate = (models) => {
-    // associations can be defined here
-    Fuel.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  }
+
+  // Fuel.associate = function(models) {
+  //     Fuel.belongsTo(models.User, {
+  //         foreignKey: {
+  //             allowNull: false
+  //         }
+  //     });
+  // }
+
   return Fuel;
 }

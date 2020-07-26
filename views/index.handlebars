@@ -1,6 +1,5 @@
 {{> nav }}
 
-{{! change id from Input to User to make it more specific for its goal}}
 <div class="container">
   <form id="signin" name="signin" method="post" action="signin">
     <div class="form-group">
@@ -11,40 +10,40 @@
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+      <input type="password" class="form-control" id="password" placeholder="Enter your Password" name="password">
+      <label id="passwordText">show password</label><input type="checkbox" id="togglePassword"><br>
     </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
   </form>
-
-
+  </form>
 </div>
 <br><br>
 
-<div class="container">
-  <form id="signup" method="post" action="signup" >
+
+<div class="">
+  <form id="signup" name="signup" method="post" action="signup">
 
     <div class="form-group">
-      <label for="firstname">First Name:</label><br>
-      <input id="firstname" name="firstname" type="text" />
+      <label for="firstname">Firstname:</label><br>
+      <input id="firstname" name="firstname" placeholder="Enter your First Name" type="text" />
     </div>
 
     <div class="form-group">
-      <label for="lastname">Last Name:</label><br>
-      <input id="lastname" name="lastname" type="text" />
+      <label for="lastname">Lastname:</label><br>
+      <input id="lastname" name="lastname" placeholder="Enter your Last Name" type="text" />
     </div>
 
     <div class="form-group">
       <label for="email">Email Address:</label><br>
-      <input class="text" id="email" name="email" type="email" />
+      <input class="text" id="email" name="email" placeholder="Enter your Email" type="email" />
     </div>
 
     <div class="form-group">
       <label for="password">Password:</label><br>
-      <input id="password" name="password" type="password" />
+      <input class="password" name="password" placeholder="Enter your Password" type="password" />
     </div>
-
-    <input class="btn btn-warning" type="submit" value="Sign Up" />
+    <button type="submit" class="btn-warning">Sign up</button>
   </form>
-
 </div>
+
+{{> footer }}
