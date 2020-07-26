@@ -1,6 +1,6 @@
 const db = require("./models");
 
-module.exports = function (app) {
+module.exports = function (app, passport) {
     app.get("/", function (req, res) {
         res.render("index");
     });
@@ -34,12 +34,12 @@ module.exports = function (app) {
         });
     });
 
-    app.post("/signup", function (req, res) {
+    app.post("/signup",  passport.authenticate('local-signup', { failureRedirect: '/' }), function (req, res) {
         // console.log(req.user);
         res.render("two-buttons");
     });
 
-    app.post("/signin", function (req, res) {
+    app.post("/signin", passport.authenticate('local-signin', { failureRedirect: '/' }), function (req, res) {
         // console.log(req.user);
         res.render("two-buttons");
     });

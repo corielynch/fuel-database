@@ -1,8 +1,9 @@
 // Dependencies
+
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
-// const passport = require("passport");
+const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 
@@ -33,16 +34,16 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 app.use(express.static("public/assets/img"));
 
-// app.use(cookieParser());
+app.use(cookieParser());
 // // Load passport strategies
-// require("./config/passport")(passport, db.User);
-// app.use(passport.initialize());
+require("./config/passport")(passport, db.User);
+app.use(passport.initialize());
 // // Session secret
-// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 // // Persistent login sessions
-// app.use(passport.session());
+app.use(passport.session());
 
-require("./routes")(app);
+require("./routes")(app, passport);
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
