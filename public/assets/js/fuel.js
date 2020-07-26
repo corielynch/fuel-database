@@ -11,6 +11,12 @@ $(document).ready(function () {
         window.location.replace(url);
     })
 
+    $(".homeBtn").on("click", function (event) {
+        event.preventDefault();
+        const url = "/";
+        window.location.replace(url);
+    })
+
     $("#send").on("click", function (event) {
         event.preventDefault();
         const fuelType = $("input[name='fueltype']:checked").val();

@@ -1,15 +1,46 @@
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-.starter-template {
-    padding: 3rem 1.5rem;
-    text-align: left;
-}
 
 body {
     background: tan;
     text-align: center;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+}
+
+.navbar-brand, .create-form{
+  margin: 0 auto;
+  position: center;
+  padding-bottom: 45px;
+}
+
+.create-form{
+  margin: 0 auto;
+  position: center;
+  padding-bottom: 45px;
+
+}
+
+label {
+  display: inline-flex;
+  margin-bottom: 30.5rem;
+  margin-bottom: 0.5rem;
+}
+
+*, ::after, ::before, label{
+  box-sizing: inherit;
+  cursor: default;
+ 
+  text-align: left;
+}
+
+body {
+  background: tan;
+  text-align: end;
 }
