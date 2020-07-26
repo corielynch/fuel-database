@@ -2,9 +2,9 @@
 
 body, html, .login_form {
   height: 2.125rem;
-  padding: 2rem 1.5rem;
+  padding: 0px;
   text-align: center;
-  background-color: tan;
+  background-color: darkgreen;
 }
 
 .footer {
@@ -19,7 +19,7 @@ body, html, .login_form {
 .navbar-brand{
   margin:0 auto;
    position: center;
-   padding-bottom: 65px;
+   padding: 0px;
   }
 
  
@@ -29,6 +29,7 @@ body, html, .login_form {
   }
 
   @media (min-width: 768px)
+
 .container{
     max-width: 608px;
 }

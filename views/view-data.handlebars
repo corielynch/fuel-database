@@ -1,6 +1,6 @@
 {{> nav }}
 
-<h1>View Fuel Data</h1><br>
+<h1>View Fuel Data</h1>
 
 <form action="submit-data" method="get" id="addBtn" class="addBtn">
     <button type="button" class="btn btn-primary">Submit Another Entry</button>
@@ -10,43 +10,12 @@
     <button type="button" class="btn btn-warning">Return Home</button>
 </form><br>
 
-<div class="">
-    {{!-- <div class="row">
-        <div class="col-md-4">
-            <ul class="list-group">
-                <li class="list-group-item">Unleaded</li>
-                <li class="list-group-item">Diesel</li>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <ul class="list-group">
-                <li class="list-group-item">Dump Truck</li>
-                <li class="list-group-item">Backhoes</li>
-                <li class="list-group-item">Personal Truck</li>
-                <li class="list-group-item">Company Trucks</li>
-                <li class="list-group-item">Small Equipment</li>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Choose Employee
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">John Smith</button>
-                    <button class="dropdown-item" type="button">Jane Doe</button>
-                    <button class="dropdown-item" type="button">Corona Virus</button>
-                </div>
-            </div>
-        </div>
-    </div><br><br> --}}
+<div class="container">
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-dark" style="width: 90%;">
+            <table class="table table-dark" style="width: 90%;" padding="5px">
                 <thead>
                     <tr>
-
                         <th scope="col">Fuel Type</th>
                         <th scope="col">Vehicle</th>
                         <th scope="col">Gallons</th>
@@ -56,7 +25,6 @@
                 <tbody>
                     {{#each fueldata}}
                     <tr>
-
                         <td>{{dataValues.fuel}}</td>
                         <td>{{dataValues.vehicle}}</td>
                         <td>{{dataValues.gallons}}</td>

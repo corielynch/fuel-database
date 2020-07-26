@@ -1,7 +1,7 @@
 
 
 body {
-    background: tan;
+    background:darkgreen;
     text-align: center;
 }
 
@@ -17,7 +17,7 @@ body {
 .navbar-brand, .create-form{
   margin: 0 auto;
   position: center;
-  padding-bottom: 45px;
+  padding-bottom: 0px;
 }
 
 .create-form{
@@ -36,11 +36,10 @@ label {
 *, ::after, ::before, label{
   box-sizing: inherit;
   cursor: default;
- 
   text-align: left;
 }
 
 body {
-  background: tan;
+  background:darkgreen;
   text-align: end;
 }
