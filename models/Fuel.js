@@ -2,17 +2,6 @@
 
 module.exports = function(sequelize, Sequelize) {
     const Fuel = sequelize.define("Fuel", {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
-        
-        submit_time: {
-            type: "TIMESTAMP",
-            defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
-            allowNull: false
-        },
 
         fuel: {
             type: Sequelize.STRING,
