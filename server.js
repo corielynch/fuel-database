@@ -26,8 +26,6 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
  
 
-// app.use(cookieParser());
-
 // Load passport strategies
 require("./config/passport")(passport, db.User);
 // For passport
