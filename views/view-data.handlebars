@@ -1,21 +1,17 @@
 {{> nav }}
-
-<h1>View Fuel Data</h1>
+<h1>View Fuel Data</h1><br>
 
 <form action="submit-data" method="get" id="addBtn" class="addBtn">
-    <button type="button" class="btn btn-primary">Submit Another Entry</button>
-</form><br>
-
-<form action="index" method="get" id="homeBtn" class="homeBtn">
-    <button type="button" class="btn btn-warning">Return Home</button>
+    <button type="button" class="btn btn-warning">Submit Another Entry</button>
 </form><br>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-dark" style="width: 90%;" padding="5px">
+            <table class="table table-dark" style="width: 90%;">
                 <thead>
                     <tr>
+
                         <th scope="col">Fuel Type</th>
                         <th scope="col">Vehicle</th>
                         <th scope="col">Gallons</th>
@@ -25,6 +21,7 @@
                 <tbody>
                     {{#each fueldata}}
                     <tr>
+
                         <td>{{dataValues.fuel}}</td>
                         <td>{{dataValues.vehicle}}</td>
                         <td>{{dataValues.gallons}}</td>

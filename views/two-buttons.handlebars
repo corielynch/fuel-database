@@ -1,22 +1,11 @@
 {{> nav }}
 
-<div class="form-group">
-    <form action="submit-data" method="get" id="addBtn" class="addBtn">
-    <button type="button" class="btn btn-primary">ADD FUEL DATA</button>
-</form>
-  </div>
+<form   id="addBtn" class="addBtn">
+    <a href="/submit-data" class="btn btn-warning">ADD FUEL DATA</a>
+</form><br>
 
-  <div class="form-group">
-    <form action="view-data" method="get" id="viewBtn" class="viewBtn">
-    <button type="button" class="btn btn-success">VIEW FUEL DATA</button>
-</form>
-  </div>
-
-
-  <div class="form-group">
-    <form action="submit-data" method="get" id="homeBtn" class="homeBtn">
-    <button type="button" class="btn btn-warining">Return Home</button>
-</form>
-  </div>
+<form   id="viewBtn" class="viewBtn">
+    <a href= "/view-data" class="btn btn-warning">VIEW FUEL DATA</a>
+</form><br>
 
 {{> footer }}

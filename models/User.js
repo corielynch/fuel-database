@@ -1,8 +1,7 @@
-"use strict";
-const bcrypt = require("bcrypt");
-
 module.exports = function (sequelize, Sequelize) {
-    const User = sequelize.define("User", {
+
+    var User = sequelize.define('User', {
+
         id: {
             autoIncrement: true,
             primaryKey: true,
@@ -17,6 +16,14 @@ module.exports = function (sequelize, Sequelize) {
         lastname: {
             type: Sequelize.STRING,
             notEmpty: true
+        },
+
+        username: {
+            type: Sequelize.TEXT
+        },
+
+        about: {
+            type: Sequelize.TEXT
         },
 
         email: {
@@ -36,27 +43,11 @@ module.exports = function (sequelize, Sequelize) {
         },
 
         status: {
-            type: Sequelize.ENUM("active", "inactive"),
-            defaultValue: "active"
-        }
-    }, {
-        hooks: {
-            beforeCreate: function (user, options) {
-                user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-            }
+            type: Sequelize.ENUM('active', 'inactive'),
+            defaultValue: 'active'
         }
     });
 
-    User.prototype.validPassword = function (password) {
-        return bcrypt.compareSync(password, this.password);
-    }
-
-    // User.associate = function(models) {
-    //     // Associating User with Fuel
-    //     User.hasMany(models.Fuel, {
-    //         onDelete: "cascade"
-    //     });
-    // };
-
     return User;
+
 }

@@ -1,22 +1,5 @@
 $(document).ready(function () {
-    $(".viewBtn").on("click", function (event) {
-        event.preventDefault();
-        const url = "/view-data";
-        window.location.replace(url);
-    })
-
-    $(".addBtn").on("click", function (event) {
-        event.preventDefault();
-        const url = "/submit-data";
-        window.location.replace(url);
-    })
-
-    $(".homeBtn").on("click", function (event) {
-        event.preventDefault();
-        const url = "/";
-        window.location.replace(url);
-    })
-
+    
     $("#send").on("click", function (event) {
         event.preventDefault();
         const fuelType = $("input[name='fueltype']:checked").val();
@@ -40,4 +23,3 @@ $(document).ready(function () {
         );
     })
 });
-

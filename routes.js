@@ -5,9 +5,13 @@ module.exports = function (app, passport) {
         res.render("index");
     });
 
+    app.get("/signup", function(req,res) {
+        res.render("signup");
+    })
+
     app.get("/view-data", function (req, res) {
         // console.log(req.user);
-        // if (req.user) {
+        if (req.user) {
         db.Fuel.findAll({
             // Sorted by descending order to get newest entry at the top
             order: [
@@ -17,9 +21,9 @@ module.exports = function (app, passport) {
             console.log(data);
             res.render("view-data", { fueldata: data });
         });
-        // } else {
-        //     res.send("You must be signed in");
-        // // };
+        } else {
+            res.send("You must be signed in");
+        };
     });
 
     app.get("/submit-data", function (req, res) {
@@ -33,14 +37,22 @@ module.exports = function (app, passport) {
             res.json(results);
         });
     });
-
-    app.post("/signup",  passport.authenticate('local-signup', { failureRedirect: '/' }), function (req, res) {
+ 
+    app.get("/logout", function (req, res) {
+        console.log("Log Out Route Hit");
+        req.session.destroy(function (err) {
+            if (err) console.log(err)
+                res.redirect('/');
+        });
+    });
+    
+    app.post("/signup",passport.authenticate('local-signup'), function (req, res) {
         // console.log(req.user);
         res.render("two-buttons");
     });
 
-    app.post("/signin", passport.authenticate('local-signin', { failureRedirect: '/' }), function (req, res) {
-        // console.log(req.user);
+    app.post("/signin", passport.authenticate('local-signin'), function (req, res) {
+        console.log(req.user);
         res.render("two-buttons");
     });
 }

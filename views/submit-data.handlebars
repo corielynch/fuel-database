@@ -1,17 +1,16 @@
 {{> nav }}
 
-<h1>Submit Fuel Data</h1><br>
+<h1>Submit Fuel Data</h1>
 
 <form class="create-form">
-
     <div class="form-group">
-        <label for="type">Fuel Type</label><br>
+        <h2><label for="type">Fuel Type</label></h2>
         <input type="radio" name="fueltype" value="Unleaded" required> Unleaded <br>
         <input type="radio" name="fueltype" value="Diesel"> Diesel
     </div><br>
 
     <div class="form-group">
-        <label for="vehicle">Vehicle</label><br>
+        <h3><label for="vehicle">Vehicle</label></h3>
         <input type="radio" name="vehicletype" value="Dump Truck" required> Dump Truck <br>
         <input type="radio" name="vehicletype" value="Backhoe"> Backhoe <br>
         <input type="radio" name="vehicletype" value="Company Vehicle"> Company Vehicle <br>
@@ -24,11 +23,11 @@
         <input type="number" id="ga" name="gallons" required>
     </div><br>
 
-    <button id="send" type="button" class="btn btn-dark">Submit</button>
+    <button id="send" type="button">Submit</button>
 </form><br>
 
 <form action="view-data" method="get" id="viewBtn" class="viewBtn">
-    <button type="button" class="btn btn-primary">VIEW FUEL DATA</button>
+    <button type="button" class="btn btn-warning">VIEW FUEL DATA</button>
 </form><br>
 
 {{> footer }}
