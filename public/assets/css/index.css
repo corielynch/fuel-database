@@ -14,3 +14,21 @@ body {
   background: darkgreen;
   text-align: center;
 }
+
+.footer {
+  position: 20px;
+  background-color: darkgreen;
+}
+
+footer {
+  display: table-row;
+  height: 1px;
+  background-color: darkgreen !important;
+  color: yellow;
+  
+}
+
+.logo, logo, navbar-header {
+  text-align: center;
+  height: 1px;
+}
