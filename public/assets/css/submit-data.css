@@ -22,12 +22,12 @@ body {
 footer {
   display: table-row;
   height: 1px;
-  background-color: darkgreen !important;
+  background-color: darkgreen;
   color: yellow;
   
 }
 
-.logo, logo, navbar-header {
+.logo  {
   text-align: center;
   height: 1px;
 }
