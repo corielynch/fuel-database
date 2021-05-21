@@ -1,4 +1,4 @@
-Goal: Fuel inventory for better booklogs both for employees & employers. For tax purposes and business organization.
+Goal: Fuel inventory for better booklogs both for employees, employers, tax purposes and business organization.
 
 `
  AS A driver, at the pump, I am able to access the Fuel App and add my log of consumed fuel.
